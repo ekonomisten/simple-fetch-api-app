@@ -1,5 +1,5 @@
 const postButton = document.querySelector('#postBtn');
-const endpoint = 'https://jsonplaceholder.typicode.com/posts';
+const endpoint = 'http://develop.visionmedia.nu/fastec/api/v1/';
 
 // Getting post from remote endpoint with Fetch API
 const getPost = () => {
@@ -22,9 +22,9 @@ const getPost = () => {
         data.forEach(post => {
             output += `
                 <div class="post" id="${post.id}">
-                    <h4>${post.title} <span>#${post.id}</span></h4>
+                    <h4>${post.project} <span>#${post.id}</span></h4>
                     <div class="post-content">
-                        <p>${post.body}</p>
+                        <p>${post.description}</p>
                     </div>
                 </div>
             `;
