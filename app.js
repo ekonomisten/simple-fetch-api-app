@@ -33,12 +33,26 @@ const getPost = () => {
 
         document.getElementById('posts').innerHTML = output;
 
+        //filtering function
+        document.getElementById('search').addEventListener('keyup', search);
+                
+        function search(){
+            let value = document.getElementById('search').value;
+            data.forEach(post=>{
+                if((post.id == value)||(post.title.indexOf(value) > -1)||(value == '')){
+                  document.getElementById(post.id).style.display = 'block';              
+                  }
+                  else{
+                   document.getElementById(post.id).style.display = 'none';
+                  }
+            })
+        }
+
     }));
 
 }
 
 // Runt getPost on button click
 postButton.addEventListener('click', getPost);
-
 
 
