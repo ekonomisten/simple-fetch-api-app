@@ -1,10 +1,9 @@
 const postButton = document.querySelector('#postBtn');
+const endpoint = 'https://jsonplaceholder.typicode.com/posts';
 
 // Getting post from remote endpoint with Fetch API
 const getPost = () => {
     
-    let endpoint = 'https://jsonplaceholder.typicode.com/posts';
-
     fetch(endpoint)
     .then((response => {
         // Return endpoint in JSON format
@@ -55,4 +54,26 @@ const getPost = () => {
 // Runt getPost on button click
 postButton.addEventListener('click', getPost);
 
+// Get input values
+let title = document.querySelector('#titleInput');
+let body = document.querySelector('#bodyInput');
 
+// Submitting a post
+const submitPost = (e) => {
+
+    e.preventDefault();
+
+    fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({
+            title,
+            body
+        }) // Same as ({title:title, body:body})
+    })
+    
+    .then((res) => res.json())
+}
