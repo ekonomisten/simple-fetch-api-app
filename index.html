@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Fetch API</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div id="page">
+        <div class="container">
+
+            <div class="fetch-wrapper">
+                <div class="title">
+                    <h1>Fetch API</h1>
+                </div>
+                <div class="btn-wrapper">
+                    <button class="btn btn-default">Get posts</button>
+                </div>
+            </div>
+
+            <div class="post-wrapper">
+                <form action="">
+                    <div class="form-wrapper">
+                        <input type="text" id="titleInput" placeholder="Title">
+                    </div>  
+                    <div class="form-wrapper">
+                        <textarea id="bodyInput" placeholder="Content..."></textarea>
+                    </div>
+                    <div class="form-wrapper">
+                        <input type="submit" class="btn btn-send" id="submitBtn">
+                    </div>
+                </form>
+
+                <div id="posts"></div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
